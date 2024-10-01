@@ -1,0 +1,12 @@
+<div class="pre-menu">
+    <img src="NightMall - png.png" alt="Logo da NightMall" width="150px">
+    <div class="search-bar-container">
+        <input type="text" class="search-bar" placeholder="Pesquise um produto"
+        [(ngModel)]="aqui" 
+        (keydown.enter)="imprime()"/>
+        <button (click)="imprime()" class="glass">
+            <span class="material-symbols-outlined">search</span>
+        </button>
+    </div>
+    <app-side-option></app-side-option>
+</div>

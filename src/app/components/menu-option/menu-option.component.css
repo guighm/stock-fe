@@ -1,0 +1,26 @@
+.menu-option {
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    margin: 0.5rem;
+    font-weight: 300;
+}
+
+.link__listra {
+    background-color: var(--cor-principal);
+    height: 1px;
+    width: 0px;
+    transition: width 0.5s;
+}
+
+.link:hover + .link__listra {
+    width: 3rem;
+}
+
+.link:hover {
+    color: var(--cor-principal);
+}

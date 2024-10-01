@@ -1,0 +1,33 @@
+.icon__link {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.material-symbols-outlined {
+    color: var(--cor-secundaria);
+    font-size: 2rem;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-hover);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    font-weight: 300;
+    top: 125%;
+    left: -170%;
+    width: 10rem;
+    z-index: 1;
+    font-size: 0.6rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.icon__link:hover>.tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}

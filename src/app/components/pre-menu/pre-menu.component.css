@@ -1,0 +1,36 @@
+.pre-menu {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0rem;
+}
+
+.search-bar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-bar {
+    width: 20rem;
+    height: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--cor-secundaria);
+    margin-top: 1rem;   
+}
+
+.search-bar::placeholder {
+    font-family: var(--fonte-principal);
+}
+
+.glass {
+    background: none;
+    border: none;
+    position: absolute;
+    z-index: 1;
+    top: 1.3rem;
+    right: 0.7rem;
+}
+
+.glass:hover {
+    cursor: pointer;    
+}

@@ -1,0 +1,27 @@
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.principal__texto {
+    color: var(--cor-secundaria);
+    font-size: 3rem;
+}
+
+.principal__botao {
+    border: none;
+    background: none;
+    color: #000000;
+    padding: 1rem;
+    background-color: var(--cor-secundaria);
+    border-radius: 2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.principal__botao:hover {
+    cursor: pointer;
+}
