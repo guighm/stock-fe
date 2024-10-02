@@ -5,13 +5,13 @@
 
 .link {
     text-decoration: none;
-    color: var(--cor-secundaria);
+    color: var(--cor-2);
     margin: 0.5rem;
     font-weight: 300;
 }
 
 .link__listra {
-    background-color: var(--cor-principal);
+    background-color: var(--cor-3);
     height: 1px;
     width: 0px;
     transition: width 0.5s;
@@ -22,5 +22,5 @@
 }
 
 .link:hover {
-    color: var(--cor-principal);
+    color: var(--cor-3);
 }

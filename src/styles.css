@@ -8,8 +8,8 @@
 }
 
 body {
-    background-color: #000000;
-    font-family: "Plus Jakarta Sans", system-ui;
+    background-color: var(--cor-1);
+    font-family: var(--fonte-1);
     font-weight: 100;
 }
 
@@ -18,8 +18,12 @@ html {
 }
 
 :root {
-    --cor-principal: #FFFF63;
-    --cor-secundaria: #FFFFFF;
+    --cor-1: #000000;
+    --cor-2: #FFFFFF;
+    --cor-3: #FFFF63;
+    --cor-4: #ff9763;
     --cor-hover: #5B5B5B;
-    --fonte-principal: "Plus Jakarta Sans", system-ui;
+    --red: #DB0E00;
+    --gray: #919191;
+    --fonte-1: "Plus Jakarta Sans", system-ui;
 }

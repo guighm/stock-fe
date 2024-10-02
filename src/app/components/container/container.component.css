@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--cor-4);
+}
+
+.container__imagem {
+    width: 50vw;
+}
+
+.container__texto {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    font-size: 2rem;
+    color: var(--cor-1);
+    text-align: center;
+    padding: 1.5rem;
+    height: 100%;
+}

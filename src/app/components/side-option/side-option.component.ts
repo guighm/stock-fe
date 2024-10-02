@@ -13,6 +13,6 @@ export class SideOptionComponent implements OnInit {
   isLoggedIn !: boolean;
 
   ngOnInit(): void {
-    this.isLoggedIn = true;
+    this.isLoggedIn = false;
   }
 }

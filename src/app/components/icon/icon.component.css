@@ -5,14 +5,14 @@
 }
 
 .material-symbols-outlined {
-    color: var(--cor-secundaria);
+    color: var(--cor-2);
     font-size: 2rem;
 }
 
 .tooltip-text {
     visibility: hidden;
     position: absolute;
-    color: var(--cor-secundaria);
+    color: var(--cor-2);
     background-color: var(--cor-hover);
     padding: 0.5rem 1rem;
     border-radius: 2rem;

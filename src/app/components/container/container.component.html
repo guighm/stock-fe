@@ -1,1 +1,14 @@
-<p>container works!</p>
+<section class="container">
+    @if (first) {
+    <img [src]="imagem" alt="" class="container__imagem">
+    <h1 class="container__texto">{{ texto }}</h1>
+    } @else {
+    @if (imgFirst) {
+    <img [src]="imagem" alt="" class="container__imagem">
+    <h2 class="container__texto">{{ texto }}</h2>
+    } @else {
+    <h2 class="container__texto">{{ texto }}</h2>
+    <img [src]="imagem" alt="" class="container__imagem">
+    }
+}
+</section>

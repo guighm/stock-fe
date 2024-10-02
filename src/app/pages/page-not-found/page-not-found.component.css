@@ -7,16 +7,16 @@
 }
 
 .principal__texto {
-    color: var(--cor-secundaria);
+    color: var(--cor-2);
     font-size: 3rem;
 }
 
 .principal__botao {
     border: none;
     background: none;
-    color: #000000;
+    color: var(--cor-1);
     padding: 1rem;
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-2);
     border-radius: 2rem;
     margin-top: 1rem;
     font-size: 1rem;

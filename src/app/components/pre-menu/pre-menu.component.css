@@ -14,12 +14,12 @@
     height: 2rem;
     border-radius: 1rem;
     padding: 1rem;
-    border: 1px solid var(--cor-secundaria);
+    border: 1px solid var(--cor-2);
     margin-top: 1rem;   
 }
 
 .search-bar::placeholder {
-    font-family: var(--fonte-principal);
+    font-family: var(--fonte-1);
 }
 
 .glass {

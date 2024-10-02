@@ -1,0 +1,21 @@
+.rodape {
+    background-color: var(--cor-3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.texto {
+    display: flex;
+    gap: 10px;
+}
+
+.cop {
+    display: flex;
+}
+
+.rodape__texto {
+    font-weight: 600;
+}

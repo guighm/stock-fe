@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-container',
@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './container.component.css'
 })
 export class ContainerComponent {
-
+  @Input() imagem!: string;
+  @Input() texto!: string;
+  @Input() imgFirst!: boolean;
+  @Input() first: boolean = false;
 }
