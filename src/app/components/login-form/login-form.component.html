@@ -1,1 +1,24 @@
-<p>login-form works!</p>
+<section class="container">
+    <h2>Faça seu login</h2>
+    <p>Os campos obrigatórios estão marcados (<app-asterisco></app-asterisco>)</p>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="formulario">
+        <div class="campo">
+            <label for="key">Credencial<app-asterisco></app-asterisco></label>
+            <input type="text" id="key" placeholder="E-mail ou nome de usuário" formControlName="key">
+            <app-error-message [control]="loginControl('key')"></app-error-message>
+        </div>
+        <div class="campo">
+            <label for="password">Senha <app-asterisco></app-asterisco></label>
+            <input type="password" id="password" placeholder="Senha" formControlName="password">
+            <app-error-message [control]="loginControl('password')"></app-error-message>
+        </div>
+        <div class="botoes">
+            <button (click)="cancelar()" class="botao-cancelar" type="button">Cancelar</button>
+            <button 
+            [disabled]="loginForm.invalid"
+            [ngClass]="{'botao-normal': loginForm.valid, 'botao-invalido': loginForm.invalid}"
+            type="submit">Fazer Login</button>
+        </div>
+        <p class="aviso">Ainda não é cadastrado? <a class="aviso__link">Cadastre-se</a></p>
+    </form>
+</section>

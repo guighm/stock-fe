@@ -1,75 +1,71 @@
 <section class="container">
+    <h2>Cadastre-se</h2>
     <p class="obs">Os campos obrigatórios estão marcados (<app-asterisco></app-asterisco>)</p>
     <form [formGroup]="signupForm" (ngSubmit)="cadastrarCliente()" class="formulario">
-        <label for="firstName">Nome <app-asterisco></app-asterisco></label>
-        <input 
-        type="text" 
-        id="firstName" 
-        placeholder="Nome" 
-        formControlName="firstName">
-        <label for="lastName">Sobrenome <app-asterisco></app-asterisco></label>
-        <input 
-        type="text" 
-        id="lastName" 
-        placeholder="Sobrenome" 
-        formControlName="lastName">
-        <label for="username">Nome de usuário <app-asterisco></app-asterisco></label>
-        <input 
-        type="text" 
-        id="username" 
-        placeholder="Escolha um nome de usuário" 
-        formControlName="username">
-        <label for="email">E-mail <app-asterisco></app-asterisco></label>
-        <input 
-        type="email" 
-        id="email" 
-        placeholder="E-mail" 
-        formControlName="email">
-        <label for="password">Senha <app-asterisco></app-asterisco></label>
-        <input 
-        type="password" 
-        id="password" 
-        placeholder="Senha" 
-        formControlName="password">
-        <label for="telephone">Telefone <app-asterisco></app-asterisco></label>
-        <input 
-        type="number" 
-        id="telephone" 
-        placeholder="Telefone" 
-        formControlName="telephone">
-        <div formGroupName="address" class="formulario__address">
-            <label for="line1">Logradouro <app-asterisco></app-asterisco></label>
-            <input 
-            type="text" 
-            id="line1" 
-            placeholder="Logradouro" 
-            formControlName="line1">
-            <label for="line2">Complemento <app-asterisco></app-asterisco></label>
-            <input 
-            type="text" 
-            id="line2" 
-            placeholder="Complemento" 
-            formControlName="line2">
-            <label for="city">Cidade <app-asterisco></app-asterisco></label>
-            <input 
-            type="text" 
-            id="city" 
-            placeholder="Cidade" 
-            formControlName="city">
-            <label for="country">País <app-asterisco></app-asterisco></label>
-            <input 
-            type="text" 
-            id="country" 
-            placeholder="País" 
-            formControlName="country">
-            <label for="postalCode">CEP <app-asterisco></app-asterisco></label>
-            <input 
-            type="number" 
-            id="postalCode" 
-            placeholder="CEP" 
-            formControlName="postalCode">
+        <div class="campo">
+            <label for="firstName">Nome <app-asterisco></app-asterisco></label>
+            <input type="text" id="firstName" placeholder="Nome" formControlName="firstName">
+            <app-error-message [control]="signupControl('firstName')"></app-error-message>
         </div>
-        <button type="button"></button>
-        <button type="submit"></button>
+        <div class="campo">
+            <label for="lastName">Sobrenome <app-asterisco></app-asterisco></label>
+            <input type="text" id="lastName" placeholder="Sobrenome" formControlName="lastName">
+            <app-error-message [control]="signupControl('lastName')"></app-error-message>
+        </div>
+        <div class="campo">
+            <label for="username">Nome de usuário <app-asterisco></app-asterisco></label>
+            <input type="text" id="username" placeholder="Escolha um nome de usuário" formControlName="username">
+            <app-error-message [control]="signupControl('username')"></app-error-message>
+        </div>
+        <div class="campo">
+            <label for="email">E-mail <app-asterisco></app-asterisco></label>
+            <input type="email" id="email" placeholder="E-mail" formControlName="email">
+            <app-error-message [control]="signupControl('email')"></app-error-message>
+        </div>
+        <div class="campo">
+            <label for="password">Senha <app-asterisco></app-asterisco></label>
+            <input type="password" id="password" placeholder="Senha" formControlName="password">
+            <app-error-message [control]="signupControl('password')"></app-error-message>
+        </div>
+        <div class="campo">
+            <label for="telephone">Telefone <app-asterisco></app-asterisco></label>
+            <input type="number" id="telephone" placeholder="Telefone" formControlName="telephone">
+            <app-error-message [control]="signupControl('telephone')"></app-error-message>
+        </div>
+        <div formGroupName="address" class="formulario__address">
+            <div class="campo">
+                <label for="line1">Logradouro <app-asterisco></app-asterisco></label>
+                <input type="text" id="line1" placeholder="Logradouro" formControlName="line1">
+                <app-error-message [control]="addressControl('line1')"></app-error-message>
+            </div>
+            <div class="campo">
+                <label for="line2">Complemento <app-asterisco></app-asterisco></label>
+                <input type="text" id="line2" placeholder="Complemento" formControlName="line2">
+                <app-error-message [control]="addressControl('line2')"></app-error-message>
+            </div>
+            <div class="campo">
+                <label for="city">Cidade <app-asterisco></app-asterisco></label>
+                <input type="text" id="city" placeholder="Cidade" formControlName="city">
+                <app-error-message [control]="addressControl('city')"></app-error-message>
+            </div>
+            <div class="campo">
+                <label for="country">País <app-asterisco></app-asterisco></label>
+                <input type="text" id="country" placeholder="País" formControlName="country">
+                <app-error-message [control]="addressControl('country')"></app-error-message>
+            </div>
+            <div class="campo">
+                <label for="postalCode">CEP <app-asterisco></app-asterisco></label>
+                <input type="number" id="postalCode" placeholder="CEP" formControlName="postalCode">
+                <app-error-message [control]="addressControl('postalCode')"></app-error-message>
+            </div>
+        </div>
+        <div class="botoes">
+            <button (click)="cancelar()" class="botao-cancelar" type="button">Cancelar</button>
+            <button 
+            [disabled]="signupForm.invalid"
+            [ngClass]="{'botao-normal': signupForm.valid, 'botao-invalido': signupForm.invalid}"
+            type="submit">Cadastrar-se</button>
+        </div>
+        <p class="aviso">Já possui cadastro? <a class="aviso__link">Fazer Login</a></p>
     </form>
 </section>

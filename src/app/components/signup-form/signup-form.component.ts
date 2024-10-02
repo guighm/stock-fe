@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AsteriscoComponent } from "../asterisco/asterisco.component";
+import { ErrorMessageComponent } from "../error-message/error-message.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-signup-form',
   standalone: true,
-  imports: [ReactiveFormsModule, AsteriscoComponent],
+  imports: [ReactiveFormsModule, AsteriscoComponent, ErrorMessageComponent, CommonModule],
   templateUrl: './signup-form.component.html',
   styleUrl: './signup-form.component.css'
 })
-export class SignupFormComponent implements OnInit{
+export class SignupFormComponent implements OnInit {
   
   signupForm!: FormGroup;
   address!: FormGroup;
@@ -33,6 +35,27 @@ export class SignupFormComponent implements OnInit{
   }
 
   cadastrarCliente() {
-    alert(this.signupForm.value);
+    console.log(this.signupForm.value);
   }
-}
+
+  signupControl(nome: string): FormControl {
+    const control = this.signupForm.get(nome) as FormControl;
+    if (!control) {
+      throw new Error("Controle não encontrado!");
+    }
+    return control;
+  }
+
+  addressControl(nome: string): FormControl {
+    const group = this.signupForm.get('address') as FormGroup;
+    const control = group.get(nome) as FormControl;
+    if (!control) {
+      throw new Error("Controle não encontrado!");
+    }
+    return control;
+  }
+
+  cancelar() {
+    this.signupForm.reset();
+  }
+  }

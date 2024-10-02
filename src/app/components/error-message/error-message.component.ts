@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-error-message',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './error-message.component.html',
   styleUrl: './error-message.component.css'
 })
-export class ErrorMessageComponent {
-  @Input() control !: FormControl;
+export class ErrorMessageComponent{
+  @Input() control!: FormControl;
 }
