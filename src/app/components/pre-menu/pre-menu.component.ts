@@ -18,11 +18,6 @@
     aqui!: string;
 
     imprime() {
-      this.produto.procurarProduto().subscribe(
-        (mensagem) => {
-          alert(mensagem.message);
-        }
-      );
     }
 
   }

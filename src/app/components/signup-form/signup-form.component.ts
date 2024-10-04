@@ -3,6 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AsteriscoComponent } from "../asterisco/asterisco.component";
 import { ErrorMessageComponent } from "../error-message/error-message.component";
 import { CommonModule } from '@angular/common';
+import { User } from '../../interfaces/user';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -12,9 +14,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './signup-form.component.css'
 })
 export class SignupFormComponent implements OnInit {
-  
+
   signupForm!: FormGroup;
   address!: FormGroup;
+  newUser!: User;
+
+  constructor(private readonly user: UserService) { }
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
@@ -25,8 +30,8 @@ export class SignupFormComponent implements OnInit {
       password: new FormControl('', [Validators.required]),
       telephone: new FormControl('', [Validators.required]),
       address: new FormGroup({
-        line1: new FormControl('', [Validators.required]),
-        line2: new FormControl('', [Validators.required]),
+        addressLine1: new FormControl('', [Validators.required]),
+        addressLine2: new FormControl('', [Validators.required]),
         city: new FormControl('', [Validators.required]),
         country: new FormControl('', [Validators.required]),
         postalCode: new FormControl('', [Validators.required]),
@@ -35,7 +40,22 @@ export class SignupFormComponent implements OnInit {
   }
 
   cadastrarCliente() {
-    console.log(this.signupForm.value);
+    this.newUser = this.signupForm.value;
+    this.user.createUser(this.newUser).subscribe(
+      (response) => {
+        console.log(response.body);
+      },
+      (error) => {
+        switch (error.status) {
+          case (403):
+            alert("E-mail e/ou nome de usuário já consta(m) na nossa base de dados!");
+            break;
+          default:
+            alert("Desculpe, não foi possível realizar o seu cadastro! Tente novamente mais tarde!");
+            break;
+        }
+      }
+    );
   }
 
   signupControl(nome: string): FormControl {
@@ -58,4 +78,4 @@ export class SignupFormComponent implements OnInit {
   cancelar() {
     this.signupForm.reset();
   }
-  }
+}

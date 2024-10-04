@@ -35,13 +35,13 @@
         <div formGroupName="address" class="formulario__address">
             <div class="campo">
                 <label for="line1">Logradouro <app-asterisco></app-asterisco></label>
-                <input type="text" id="line1" placeholder="Logradouro" formControlName="line1">
-                <app-error-message [control]="addressControl('line1')"></app-error-message>
+                <input type="text" id="line1" placeholder="Logradouro" formControlName="addressLine1">
+                <app-error-message [control]="addressControl('addressLine1')"></app-error-message>
             </div>
             <div class="campo">
                 <label for="line2">Complemento <app-asterisco></app-asterisco></label>
-                <input type="text" id="line2" placeholder="Complemento" formControlName="line2">
-                <app-error-message [control]="addressControl('line2')"></app-error-message>
+                <input type="text" id="line2" placeholder="Complemento" formControlName="addressLine2">
+                <app-error-message [control]="addressControl('addressLine2')"></app-error-message>
             </div>
             <div class="campo">
                 <label for="city">Cidade <app-asterisco></app-asterisco></label>

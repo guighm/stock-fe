@@ -4,8 +4,8 @@
     <form [formGroup]="loginForm" (ngSubmit)="login()" class="formulario">
         <div class="campo">
             <label for="key">Credencial<app-asterisco></app-asterisco></label>
-            <input type="text" id="key" placeholder="E-mail ou nome de usuário" formControlName="key">
-            <app-error-message [control]="loginControl('key')"></app-error-message>
+            <input type="text" id="key" placeholder="E-mail ou nome de usuário" formControlName="usernameOrEmail">
+            <app-error-message [control]="loginControl('usernameOrEmail')"></app-error-message>
         </div>
         <div class="campo">
             <label for="password">Senha <app-asterisco></app-asterisco></label>
